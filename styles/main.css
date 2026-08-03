@@ -783,6 +783,16 @@ body {
     border-color: var(--asena-red);
 }
 
+.dept-captain-highlight {
+    border-color: rgba(51, 136, 255, 0.4);
+    box-shadow: 0 0 12px rgba(51, 136, 255, 0.15);
+}
+
+.dept-captain-highlight:hover {
+    border-color: var(--turan-blue);
+    box-shadow: 0 0 20px rgba(51, 136, 255, 0.3);
+}
+
 .team-card:hover {
     border-color: var(--border-highlight);
 }
@@ -802,6 +812,7 @@ body {
 
 .team-info {
     padding: 1.5rem;
+    text-align: center;
 }
 
 .team-name {
