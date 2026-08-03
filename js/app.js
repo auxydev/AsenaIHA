@@ -63,6 +63,35 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    // Stats Counter Animation
+    const statsObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const target = +entry.target.getAttribute('data-target');
+                const duration = 2000;
+                const increment = target / (duration / 16);
+                let current = 0;
+
+                const updateCounter = () => {
+                    current += increment;
+                    if (current < target) {
+                        entry.target.innerText = Math.ceil(current).toString().padStart(2, '0');
+                        requestAnimationFrame(updateCounter);
+                    } else {
+                        entry.target.innerText = target.toString().padStart(2, '0');
+                    }
+                };
+
+                updateCounter();
+                observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+
+    document.querySelectorAll('.stat-number').forEach(stat => {
+        statsObserver.observe(stat);
+    });
+
     // Gallery Lightbox Logic
     const galleryItems = document.querySelectorAll('.gallery-item');
     const modal = document.getElementById('galleryModal');
