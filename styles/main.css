@@ -474,33 +474,52 @@ body {
    UAV SECTIONS (ASENA & TURAN)
    ========================================= */
 .uav-section {
-    padding: 6rem 0;
+    padding: 8rem 0;
     border-top: 1px solid var(--border-color);
     position: relative;
+    overflow: hidden;
 }
 
+/* Background Watermarks */
+.uav-watermark {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 15vw;
+    font-weight: 900;
+    color: rgba(255, 255, 255, 0.02);
+    z-index: 0;
+    pointer-events: none;
+    white-space: nowrap;
+    font-family: 'Press Start 2P', monospace;
+}
+.asena-theme .uav-watermark { left: -5%; }
+.turan-theme .uav-watermark { right: -5%; }
+
 .asena-theme {
-    background: linear-gradient(135deg, var(--bg-color) 30%, rgba(102, 0, 0, 0.4) 100%);
+    background: linear-gradient(135deg, var(--bg-color) 40%, rgba(102, 0, 0, 0.15) 100%);
 }
 
 .turan-theme {
-    background: linear-gradient(135deg, rgba(0, 34, 85, 0.5) 0%, var(--bg-color) 70%);
+    background: linear-gradient(135deg, rgba(0, 34, 85, 0.2) 0%, var(--bg-color) 60%);
 }
 
-.asena-text {
-    color: var(--asena-red);
-}
-
-.turan-text {
-    color: var(--turan-blue);
-}
+.asena-text { color: var(--asena-red); text-shadow: 0 0 10px rgba(255,26,26,0.5); }
+.turan-text { color: var(--turan-blue); text-shadow: 0 0 10px rgba(51,136,255,0.5); }
 
 .uav-header {
-    margin-bottom: 3rem;
+    margin-bottom: 4rem;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     gap: 1rem;
+    position: relative;
+    z-index: 2;
+}
+
+.turan-theme .uav-header {
+    align-items: flex-end;
+    text-align: right;
 }
 
 .badges {
@@ -513,131 +532,161 @@ body {
     font-weight: 700;
     text-transform: uppercase;
     border: 1px solid;
+    backdrop-filter: blur(5px);
 }
 
 .asena-badge {
     border-color: var(--asena-red);
     color: var(--asena-red);
-    background: rgba(255, 26, 26, 0.1);
+    background: rgba(255, 26, 26, 0.05);
 }
 
 .turan-badge {
     border-color: var(--turan-blue);
     color: var(--turan-blue);
-    background: rgba(51, 136, 255, 0.1);
+    background: rgba(51, 136, 255, 0.05);
 }
 
 .uav-grid {
     display: grid;
     grid-template-columns: 1.2fr 1fr;
-    gap: 4rem;
-    align-items: start;
+    gap: 2rem;
+    align-items: center;
+    position: relative;
+    z-index: 2;
 }
 
 .reverse-grid {
-    direction: rtl;
     grid-template-columns: 1fr 1.2fr;
 }
 
-.reverse-grid>* {
-    direction: ltr;
+/* Glassmorphism Panel */
+.glass-panel {
+    background: rgba(10, 10, 10, 0.6);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    padding: 2.5rem;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+    position: relative;
+    z-index: 5;
 }
 
+.asena-theme .glass-panel {
+    border-left: 3px solid var(--asena-red);
+    box-shadow: 0 0 30px rgba(255,26,26,0.05);
+}
+
+.turan-theme .glass-panel {
+    border-right: 3px solid var(--turan-blue);
+    box-shadow: 0 0 30px rgba(51,136,255,0.05);
+}
+
+/* Image floating and breakout */
 .uav-image-wrapper {
     position: relative;
-    padding: 1.5rem;
-    background-color: var(--surface-color);
-    border: 1px solid var(--border-color);
+    width: 120%; /* breakout */
+    z-index: 3;
+    animation: floatAnim 6s ease-in-out infinite;
+}
+
+.asena-theme .uav-image-wrapper {
+    left: -10%;
+}
+
+.turan-theme .uav-image-wrapper {
+    right: -10%;
+}
+
+@keyframes floatAnim {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+    100% { transform: translateY(0); }
 }
 
 .uav-image {
     width: 100%;
     height: auto;
     display: block;
-    filter: contrast(1.2) grayscale(20%);
+    filter: drop-shadow(0 30px 30px rgba(0,0,0,0.8)) contrast(1.1);
 }
 
-.hud-corners::before,
-.hud-corners::after,
-.hud-crosshair::before,
-.hud-crosshair::after {
-    content: '';
+/* Redesigned HUD elements around image */
+.hud-ring {
     position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    height: 80%;
+    border: 1px dashed rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
     pointer-events: none;
+    z-index: -1;
+    animation: rotateSlow 30s linear infinite;
 }
 
-.hud-corners::before {
-    top: -5px;
-    left: -5px;
-    width: 30px;
-    height: 30px;
-    border: 2px solid;
-    border-right: none;
-    border-bottom: none;
+.asena-theme .hud-ring { border-color: rgba(255,26,26,0.15); }
+.turan-theme .hud-ring { border-color: rgba(51,136,255,0.15); }
+
+@keyframes rotateSlow {
+    from { transform: translate(-50%, -50%) rotate(0deg); }
+    to { transform: translate(-50%, -50%) rotate(360deg); }
 }
 
-.hud-corners::after {
-    bottom: -5px;
-    right: -5px;
-    width: 30px;
-    height: 30px;
-    border: 2px solid;
-    border-left: none;
-    border-top: none;
-}
-
-.asena-theme .hud-corners::before,
-.asena-theme .hud-corners::after {
-    border-color: var(--asena-red);
-}
-
-.turan-theme .hud-corners::before,
-.turan-theme .hud-corners::after {
-    border-color: var(--turan-blue);
-}
-
-/* TAB SYSTEM IN UAV */
-.uav-details {
+/* Cyber Tabs */
+.cyber-tab-nav {
     display: flex;
-    flex-direction: column;
-}
-
-.tab-nav {
-    display: flex;
-    border-bottom: 1px solid var(--border-color);
+    gap: 1rem;
     margin-bottom: 2rem;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    padding-bottom: 1rem;
 }
 
-.tab-btn {
+.turan-theme .cyber-tab-nav {
+    justify-content: flex-end;
+}
+
+.cyber-tab-btn {
     background: transparent;
     border: none;
     color: var(--text-secondary);
-    padding: 1rem 0;
-    margin-right: 2rem;
+    padding: 0.5rem 1rem;
     cursor: pointer;
-    font-size: 0.65rem;
-    transition: color 0.2s, border-bottom 0.2s;
-    border-bottom: 2px solid transparent;
+    font-size: 0.7rem;
+    transition: all 0.3s ease;
+    border-radius: 4px;
+    position: relative;
+    overflow: hidden;
 }
 
-.tab-btn:hover {
+.cyber-tab-btn::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background-color: var(--text-primary);
+    transition: width 0.3s ease;
+}
+
+.cyber-tab-btn:hover {
+    color: var(--text-primary);
+    background: rgba(255,255,255,0.05);
+}
+
+.cyber-tab-btn.active {
     color: var(--text-primary);
 }
 
-.tab-btn.active {
-    color: var(--text-primary);
-    border-bottom-color: var(--text-primary);
+.cyber-tab-btn.active::before {
+    width: 100%;
 }
 
-.asena-theme .tab-btn.active {
-    border-bottom-color: var(--asena-red);
-    color: var(--asena-red);
-}
-
-.turan-theme .tab-btn.active {
-    border-bottom-color: var(--turan-blue);
-    color: var(--turan-blue);
-}
+.asena-theme .cyber-tab-btn.active::before { background-color: var(--asena-red); box-shadow: 0 0 10px var(--asena-red); }
+.turan-theme .cyber-tab-btn.active::before { background-color: var(--turan-blue); box-shadow: 0 0 10px var(--turan-blue); }
 
 .tab-content {
     display: none;
@@ -648,89 +697,78 @@ body {
     display: block;
 }
 
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(10px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
 .stats-title {
-    font-size: 1.2rem;
+    font-size: 1rem;
     font-weight: 900;
     margin-bottom: 1.5rem;
     color: var(--text-primary);
     letter-spacing: 1px;
 }
 
-/* DATA TABLES */
-.data-table {
-    width: 100%;
-    border-collapse: collapse;
+/* Cyber Stats Grid */
+.cyber-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
 }
 
-.data-table tr {
-    border-bottom: 1px solid var(--border-color);
+.cyber-stat-card {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.05);
+    padding: 1rem;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    transition: transform 0.2s, background 0.2s;
 }
 
-.data-table tr:last-child {
-    border-bottom: none;
+.cyber-stat-card:hover {
+    background: rgba(255,255,255,0.05);
+    transform: translateY(-2px);
 }
 
-.data-table td {
-    padding: 1rem 0;
-    font-size: 0.85rem;
+.asena-theme .cyber-stat-card:hover { border-color: rgba(255,26,26,0.3); }
+.turan-theme .cyber-stat-card:hover { border-color: rgba(51,136,255,0.3); }
+
+.cyber-stat-label {
+    font-size: 0.65rem;
     color: var(--text-secondary);
 }
 
-.data-table td:first-child {
+.cyber-stat-value {
+    font-size: 1.1rem;
     font-weight: 700;
-    text-transform: uppercase;
-    width: 60%;
-}
-
-.data-table td:last-child {
-    text-align: right;
     color: var(--text-primary);
-    font-size: 0.75rem;
 }
 
-.asena-table td:last-child {
-    color: var(--asena-red);
-}
+.asena-theme .cyber-stat-value { color: var(--asena-red); text-shadow: 0 0 8px rgba(255,26,26,0.4); }
+.turan-theme .cyber-stat-value { color: var(--turan-blue); text-shadow: 0 0 8px rgba(51,136,255,0.4); }
 
-.turan-table td:last-child {
-    color: var(--turan-blue);
-}
-
+/* Mission / Competition text */
 .uav-prose {
     font-size: 0.9rem;
     line-height: 1.7;
-    color: var(--text-secondary);
+    color: rgba(255,255,255,0.8);
 }
 
 .comp-item {
-    padding: 1rem;
-    background: var(--surface-color);
-    border: 1px solid var(--border-color);
-    border-left: 3px solid var(--border-highlight);
+    padding: 1.2rem;
+    background: rgba(0,0,0,0.4);
+    border-radius: 8px;
+    border: 1px solid rgba(255,255,255,0.05);
 }
 
 .asena-theme .comp-item {
-    border-left-color: var(--asena-red);
+    border-left: 2px solid var(--asena-red);
 }
 
 .turan-theme .comp-item {
-    border-left-color: var(--turan-blue);
+    border-left: 2px solid var(--turan-blue);
 }
 
 .comp-item h4 {
-    font-size: 0.75rem;
+    font-size: 0.8rem;
     margin-bottom: 0.8rem;
 }
 
@@ -826,10 +864,23 @@ body {
     padding: 6rem 0;
     background-color: var(--bg-color);
     border-top: 1px solid var(--border-color);
+    /* New moving grid background */
+    background-image: linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+                      linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+    background-size: 40px 40px;
+    animation: bgGridMove 20s linear infinite;
+    position: relative;
+}
+
+@keyframes bgGridMove {
+    0% { background-position: 0 0; }
+    100% { background-position: 40px 40px; }
 }
 
 .team-department {
     margin-bottom: 5rem;
+    position: relative;
+    z-index: 2;
 }
 
 .team-department:last-child {
@@ -847,129 +898,138 @@ body {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 2rem;
+    gap: 2.5rem;
 }
 
+/* CYBER ID CARD */
 .team-card {
     width: 280px;
-    background-color: var(--surface-color);
-    border: 1px solid var(--border-color);
-    transition: border-color 0.2s;
+    background: rgba(10, 10, 10, 0.7);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
     flex-shrink: 0;
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.team-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.8);
 }
 
 .captain-highlight {
-    border-color: var(--asena-red-dark);
-    box-shadow: 0 0 10px rgba(102, 0, 0, 0.5);
+    border-bottom: 3px solid var(--asena-red-dark);
 }
 
 .captain-highlight:hover {
     border-color: var(--asena-red);
+    box-shadow: 0 10px 30px rgba(255,26,26,0.15);
 }
 
 .dept-captain-highlight {
-    border-color: rgba(51, 136, 255, 0.4);
-    box-shadow: 0 0 12px rgba(51, 136, 255, 0.15);
+    border-bottom: 3px solid rgba(51, 136, 255, 0.4);
 }
 
 .dept-captain-highlight:hover {
     border-color: var(--turan-blue);
-    box-shadow: 0 0 20px rgba(51, 136, 255, 0.3);
+    box-shadow: 0 10px 30px rgba(51,136,255,0.15);
 }
 
-.team-card:hover {
-    border-color: var(--border-highlight);
-}
-
+/* IMAGE WITH SCANLINE HOVER */
 .team-img-wrapper {
     position: relative;
-    border-bottom: 1px solid var(--border-color);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    overflow: hidden;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
 }
 
 .team-img {
     width: 100%;
     height: 240px;
     object-fit: cover;
-    filter: contrast(1.2);
+    filter: contrast(1.1) grayscale(20%);
     display: block;
+    transition: filter 0.3s ease;
 }
 
+.team-card:hover .team-img {
+    filter: contrast(1.2) grayscale(0%);
+}
+
+.scanline-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+    opacity: 0;
+    pointer-events: none;
+    z-index: 2;
+}
+
+.captain-highlight .scanline-overlay { background: var(--asena-red); box-shadow: 0 0 15px var(--asena-red); }
+.dept-captain-highlight .scanline-overlay { background: var(--turan-blue); box-shadow: 0 0 15px var(--turan-blue); }
+
+.team-card:hover .scanline-overlay {
+    animation: scanAnim 2s ease-in-out infinite;
+    opacity: 1;
+}
+
+@keyframes scanAnim {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(240px); }
+    100% { transform: translateY(0); }
+}
+
+
+
+/* INFO & ID TEXT */
 .team-info {
     padding: 1.5rem;
-    text-align: center;
+    position: relative;
+    text-align: left; /* Changed from center to left for ID look */
 }
 
 .team-name {
     font-size: 1.1rem;
     font-weight: 900;
     text-transform: uppercase;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.3rem;
     letter-spacing: 1px;
+    color: var(--text-primary);
 }
 
 .team-role {
     font-size: 0.55rem;
-    color: var(--text-primary);
+    color: rgba(255, 255, 255, 0.5);
     margin-bottom: 1rem;
-    padding: 0.3rem 0;
-    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 0.8rem;
+    border-bottom: 1px dashed rgba(255, 255, 255, 0.1);
 }
 
 .team-desc {
     font-size: 0.8rem;
     color: var(--text-secondary);
     line-height: 1.5;
-    margin-bottom: 1.5rem;
     min-height: 4.8rem;
 }
 
-.progress-container {
-    display: flex;
-    flex-direction: column;
-    gap: 0.8rem;
-}
-
-.progress-bar-wrapper {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-}
-
-.progress-label {
-    font-size: 0.55rem;
-    width: 75px;
-    color: var(--text-secondary);
-}
-
-.progress-track {
-    flex-grow: 1;
-    height: 6px;
-    background-color: var(--surface-light);
-    border: 1px solid var(--border-color);
-    position: relative;
-}
-
-.progress-fill {
-    height: 100%;
+/* ID CARD DECORATIONS */
+.id-barcode {
+    font-family: 'Press Start 2P', monospace;
+    font-size: 0.35rem;
+    color: rgba(255, 255, 255, 0.15);
     position: absolute;
-    left: 0;
-    top: 0;
-}
-
-.progress-value {
-    font-size: 0.55rem;
-    width: 35px;
+    bottom: 1rem;
+    right: 1.5rem;
     text-align: right;
-    font-weight: bold;
-    color: var(--text-primary);
-}
-
-.asena-fill {
-    background-color: var(--asena-red);
-}
-
-.turan-fill {
-    background-color: var(--turan-blue);
+    line-height: 1.5;
+    pointer-events: none;
 }
 
 /* =========================================

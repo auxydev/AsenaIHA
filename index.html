@@ -1,21 +1,24 @@
 <!DOCTYPE html>
 <html lang="tr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Asena & Turan İHA Takımı</title>
-    
+
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&family=Press+Start+2P&display=swap" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&family=Press+Start+2P&display=swap"
+        rel="stylesheet">
+
     <!-- Favicon -->
     <link rel="icon" type="image/jpeg" href="assets/images/logo.jpeg">
-    
+
     <!-- Custom CSS -->
     <link rel="stylesheet" href="styles/main.css">
 </head>
+
 <body>
 
     <!-- Global Scanlines Overlay -->
@@ -42,7 +45,8 @@
                 <li><a href="#contact">İletişim</a></li>
             </ul>
             <div class="nav-actions">
-                <a href="api-panel.html" target="_blank" class="btn btn-panel pixel-font" style="font-size: 0.6rem;">İHA Yönetim Paneli</a>
+                <a href="api-panel.html" target="_blank" class="btn btn-panel pixel-font" style="font-size: 0.6rem;">İHA
+                    Yönetim Paneli</a>
             </div>
         </div>
     </nav>
@@ -55,13 +59,14 @@
         </div>
 
         <div class="hero-content">
-            <div class="hero-tech-status pixel-font" style="margin-bottom: 2rem; color: var(--asena-red); font-size: 0.6rem; letter-spacing: 2px;">
+            <div class="hero-tech-status pixel-font"
+                style="margin-bottom: 2rem; color: var(--asena-red); font-size: 0.6rem; letter-spacing: 2px;">
                 SYS_READY // V2.0.4 // LINK_ACTIVE
             </div>
             <h1 class="hero-title">GELECEĞİN GÖKYÜZÜ GÜCÜ</h1>
             <p class="hero-desc">
-                Aksaray Üniversitesi bünyesinde kurulan ekibimiz, otonom uçuş sistemleri, 
-                yapay zeka destekli görüntü işleme ve ileri mühendislik çözümleriyle 
+                Aksaray Üniversitesi bünyesinde kurulan ekibimiz, otonom uçuş sistemleri,
+                yapay zeka destekli görüntü işleme ve ileri mühendislik çözümleriyle
                 yerli ve özgün insansız hava araçları geliştirmektedir.
             </p>
             <a href="#tech" class="btn btn-outline-white">SİSTEMLERİ İNCELE</a>
@@ -87,8 +92,10 @@
                 </div>
             </div>
             <div class="stat-disclaimer center-text">
-                <span class="pixel-font" style="color: var(--asena-red); font-size: 0.7rem;">// STATUS: HAZIRLIK AŞAMASINDA //</span><br>
-                <span style="display: inline-block; margin-top: 0.5rem; color: var(--text-secondary);">Şu anda projelendirme ve üretim aşamasındayız, pistlere çıkmaya hazırlanıyoruz.</span>
+                <span class="pixel-font" style="color: var(--asena-red); font-size: 0.7rem;">// STATUS: HAZIRLIK
+                    AŞAMASINDA //</span><br>
+                <span style="display: inline-block; margin-top: 0.5rem; color: var(--text-secondary);">Şu anda
+                    projelendirme ve üretim aşamasındayız, pistlere çıkmaya hazırlanıyoruz.</span>
             </div>
         </div>
     </section>
@@ -97,7 +104,7 @@
     <section id="tech" class="tech-section">
         <div class="container">
             <h2 class="section-title center-text">TEKNİK YETKİNLİKLER</h2>
-            
+
             <div class="tech-grid">
                 <div class="tech-card">
                     <div class="tech-header">
@@ -140,6 +147,7 @@
 
     <!-- Asena İHA Section -->
     <section id="asena" class="uav-section asena-theme">
+        <div class="uav-watermark">ASENA</div>
         <div class="container">
             <div class="uav-header">
                 <h2 class="asena-text section-title" style="margin-bottom: 0;">ASENA İHA</h2>
@@ -148,40 +156,63 @@
                     <span class="badge asena-badge pixel-font" style="font-size: 0.5rem;">Teknofest</span>
                 </div>
             </div>
-            
+
             <div class="uav-grid">
                 <div class="uav-image-wrapper">
+                    <div class="hud-ring"></div>
                     <img src="assets/images/asena_uav.png" alt="Asena İHA" class="uav-image">
-                    <div class="hud-corners"></div>
-                    <div class="hud-crosshair"></div>
                 </div>
-                
-                <div class="uav-details">
-                    <div class="tab-nav pixel-font">
-                        <button class="tab-btn active" data-target="asena-specs">PARAMETRELER</button>
-                        <button class="tab-btn" data-target="asena-mission">GÖREV PROFİLİ</button>
-                        <button class="tab-btn" data-target="asena-comp">YARIŞMALAR</button>
+
+                <div class="uav-details glass-panel">
+                    <div class="cyber-tab-nav pixel-font">
+                        <button class="cyber-tab-btn active" data-target="asena-specs">PARAMETRELER</button>
+                        <button class="cyber-tab-btn" data-target="asena-mission">GÖREV PROFİLİ</button>
+                        <button class="cyber-tab-btn" data-target="asena-comp">YARIŞMALAR</button>
                     </div>
-                    
+
                     <div class="tab-content active" id="asena-specs">
                         <h3 class="stats-title">SİSTEM TEKNİK VERİLERİ</h3>
-                        <table class="data-table asena-table">
-                            <tr><td>Maks. Kalkış Ağırlığı</td><td class="pixel-font">15 KG</td></tr>
-                            <tr><td>Uçuş Süresi</td><td class="pixel-font">45 DK</td></tr>
-                            <tr><td>Seyir Hızı</td><td class="pixel-font">70 KM/S</td></tr>
-                            <tr><td>Görev Menzili</td><td class="pixel-font">10 KM</td></tr>
-                            <tr><td>Faydalı Yük Kapasitesi</td><td class="pixel-font">4 KG</td></tr>
-                            <tr><td>Haberleşme Mimarisi</td><td class="pixel-font">AES-256 (Veri Bağı)</td></tr>
-                        </table>
+                        <div class="cyber-stats-grid">
+                            <div class="cyber-stat-card">
+                                <span class="cyber-stat-label pixel-font">Maks. Kalkış Ağırlığı</span>
+                                <span class="cyber-stat-value pixel-font">15 KG</span>
+                            </div>
+                            <div class="cyber-stat-card">
+                                <span class="cyber-stat-label pixel-font">Uçuş Süresi</span>
+                                <span class="cyber-stat-value pixel-font">45 DK</span>
+                            </div>
+                            <div class="cyber-stat-card">
+                                <span class="cyber-stat-label pixel-font">Seyir Hızı</span>
+                                <span class="cyber-stat-value pixel-font">70 KM/S</span>
+                            </div>
+                            <div class="cyber-stat-card">
+                                <span class="cyber-stat-label pixel-font">Görev Menzili</span>
+                                <span class="cyber-stat-value pixel-font">10 KM</span>
+                            </div>
+                            <div class="cyber-stat-card">
+                                <span class="cyber-stat-label pixel-font">Faydalı Yük Kap.</span>
+                                <span class="cyber-stat-value pixel-font">4 KG</span>
+                            </div>
+                            <div class="cyber-stat-card">
+                                <span class="cyber-stat-label pixel-font">Haberleşme</span>
+                                <span class="cyber-stat-value pixel-font">AES-256</span>
+                            </div>
+                        </div>
                     </div>
 
                     <div class="tab-content" id="asena-mission">
                         <h3 class="stats-title">KONSEPT VE GÖREV TANIMI</h3>
                         <p class="uav-prose">
-                            Asena İnsansız Hava Aracı, zorlu operasyonel sahalarda otonom faydalı yük bırakma, hareketli nesne takibi ve geniş alan gözetleme görevlerini icra etmek üzere geliştirilmiştir. Sistemin temel mimarisi, GPS sinyallerinin zayıfladığı ortamlarda dahi stabil uçuş yapabilen yedekli bir uçuş kontrol altyapısı üzerine inşa edilmiştir.
+                            Asena İnsansız Hava Aracı, zorlu operasyonel sahalarda otonom faydalı yük bırakma, hareketli
+                            nesne takibi ve geniş alan gözetleme görevlerini icra etmek üzere geliştirilmiştir. Sistemin
+                            temel mimarisi, GPS sinyallerinin zayıfladığı ortamlarda dahi stabil uçuş yapabilen yedekli
+                            bir uçuş kontrol altyapısı üzerine inşa edilmiştir.
                         </p>
                         <p class="uav-prose mt-1">
-                            Gövde yapısı hafiflik ve mukavemet dengesini sağlamak adına havacılık standartlarında kompozit malzemelerden üretilmiş olup, yüksek rüzgar hızlarında dahi aerodinamik kararlılığını korur. Yapay zeka modülü, uçuş esnasında yer istasyonundan bağımsız karar alabilme yetisine sahiptir.
+                            Gövde yapısı hafiflik ve mukavemet dengesini sağlamak adına havacılık standartlarında
+                            kompozit malzemelerden üretilmiş olup, yüksek rüzgar hızlarında dahi aerodinamik
+                            kararlılığını korur. Yapay zeka modülü, uçuş esnasında yer istasyonundan bağımsız karar
+                            alabilme yetisine sahiptir.
                         </p>
                     </div>
 
@@ -190,13 +221,18 @@
                         <div class="comp-item">
                             <h4 class="pixel-font asena-text">IMechE UAS CHALLENGE (UK)</h4>
                             <p class="uav-prose">
-                                Dünyanın önde gelen mühendislik yarışmalarından biri olan Birleşik Krallık merkezli IMechE UAS organizasyonunda; Asena İHA sistemimiz, zorlu meteorolojik koşullarda tamamen otonom uçuş yeteneklerini ve yapay zeka destekli hassas nesne tanımlama kapasitesini sergilemek üzere tasarlanmıştır.
+                                Dünyanın önde gelen mühendislik yarışmalarından biri olan Birleşik Krallık merkezli
+                                IMechE UAS organizasyonunda; Asena İHA sistemimiz, zorlu meteorolojik koşullarda tamamen
+                                otonom uçuş yeteneklerini ve yapay zeka destekli hassas nesne tanımlama kapasitesini
+                                sergilemek üzere tasarlanmıştır.
                             </p>
                         </div>
                         <div class="comp-item mt-1">
                             <h4 class="pixel-font asena-text">TEKNOFEST ULUSLARARASI İHA</h4>
                             <p class="uav-prose">
-                                Milli teknoloji hamlesi vizyonu doğrultusunda Teknofest operasyonel sahasında; karmaşık senaryolara sahip hedefleri (hedef koordinat tespiti, otonom iniş, su topu bırakma) sıfır insan müdahalesi ile tamamlama yetkinliğimizi kanıtlamaktayız.
+                                Milli teknoloji hamlesi vizyonu doğrultusunda Teknofest operasyonel sahasında; karmaşık
+                                senaryolara sahip hedefleri (hedef koordinat tespiti, otonom iniş, su topu bırakma)
+                                sıfır insan müdahalesi ile tamamlama yetkinliğimizi kanıtlamaktayız.
                             </p>
                         </div>
                     </div>
@@ -207,6 +243,7 @@
 
     <!-- Turan İHA Section -->
     <section id="turan" class="uav-section turan-theme">
+        <div class="uav-watermark">TURAN</div>
         <div class="container">
             <div class="uav-header">
                 <h2 class="turan-text section-title" style="margin-bottom: 0;">TURAN İHA</h2>
@@ -215,40 +252,57 @@
                     <span class="badge turan-badge pixel-font" style="font-size: 0.5rem;">IMechE UAS</span>
                 </div>
             </div>
-            
+
             <div class="uav-grid reverse-grid">
-                <div class="uav-image-wrapper">
-                    <img src="assets/images/turan_uav.png" alt="Turan İHA" class="uav-image">
-                    <div class="hud-corners"></div>
-                    <div class="hud-crosshair"></div>
-                </div>
-                
-                <div class="uav-details">
-                    <div class="tab-nav pixel-font">
-                        <button class="tab-btn active" data-target="turan-specs">PARAMETRELER</button>
-                        <button class="tab-btn" data-target="turan-mission">GÖREV PROFİLİ</button>
-                        <button class="tab-btn" data-target="turan-comp">YARIŞMALAR</button>
+                <div class="uav-details glass-panel">
+                    <div class="cyber-tab-nav pixel-font">
+                        <button class="cyber-tab-btn active" data-target="turan-specs">PARAMETRELER</button>
+                        <button class="cyber-tab-btn" data-target="turan-mission">GÖREV PROFİLİ</button>
+                        <button class="cyber-tab-btn" data-target="turan-comp">YARIŞMALAR</button>
                     </div>
-                    
+
                     <div class="tab-content active" id="turan-specs">
                         <h3 class="stats-title">SİSTEM TEKNİK VERİLERİ</h3>
-                        <table class="data-table turan-table">
-                            <tr><td>Maks. Kalkış Ağırlığı</td><td class="pixel-font">20 KG</td></tr>
-                            <tr><td>Uçuş Süresi</td><td class="pixel-font">60 DK</td></tr>
-                            <tr><td>Seyir Hızı</td><td class="pixel-font">90 KM/S</td></tr>
-                            <tr><td>Görev Menzili</td><td class="pixel-font">25 KM</td></tr>
-                            <tr><td>Faydalı Yük Kapasitesi</td><td class="pixel-font">6 KG</td></tr>
-                            <tr><td>Hedef Tespit Modülü</td><td class="pixel-font">AI VISION & ML</td></tr>
-                        </table>
+                        <div class="cyber-stats-grid">
+                            <div class="cyber-stat-card">
+                                <span class="cyber-stat-label pixel-font">Maks. Kalkış Ağırlığı</span>
+                                <span class="cyber-stat-value pixel-font">20 KG</span>
+                            </div>
+                            <div class="cyber-stat-card">
+                                <span class="cyber-stat-label pixel-font">Uçuş Süresi</span>
+                                <span class="cyber-stat-value pixel-font">60 DK</span>
+                            </div>
+                            <div class="cyber-stat-card">
+                                <span class="cyber-stat-label pixel-font">Seyir Hızı</span>
+                                <span class="cyber-stat-value pixel-font">90 KM/S</span>
+                            </div>
+                            <div class="cyber-stat-card">
+                                <span class="cyber-stat-label pixel-font">Görev Menzili</span>
+                                <span class="cyber-stat-value pixel-font">25 KM</span>
+                            </div>
+                            <div class="cyber-stat-card">
+                                <span class="cyber-stat-label pixel-font">Faydalı Yük Kap.</span>
+                                <span class="cyber-stat-value pixel-font">6 KG</span>
+                            </div>
+                            <div class="cyber-stat-card">
+                                <span class="cyber-stat-label pixel-font">Hedef Tespit Mod.</span>
+                                <span class="cyber-stat-value pixel-font">AI VISION & ML</span>
+                            </div>
+                        </div>
                     </div>
 
                     <div class="tab-content" id="turan-mission">
                         <h3 class="stats-title">KONSEPT VE GÖREV TANIMI</h3>
                         <p class="uav-prose">
-                            Turan İHA, stratejik keşif, yüksek hızlı gözetleme ve ağır faydalı yük taşıma kapasitesine ihtiyaç duyulan harekat alanları için özel olarak projelendirilmiştir. Geliştirilen gövde yapısı, yüksek manevra kabiliyetine imkan verirken, rüzgar direncini minimuma indirecek aerodinamik optimize profillere sahiptir.
+                            Turan İHA, stratejik keşif, yüksek hızlı gözetleme ve ağır faydalı yük taşıma kapasitesine
+                            ihtiyaç duyulan harekat alanları için özel olarak projelendirilmiştir. Geliştirilen gövde
+                            yapısı, yüksek manevra kabiliyetine imkan verirken, rüzgar direncini minimuma indirecek
+                            aerodinamik optimize profillere sahiptir.
                         </p>
                         <p class="uav-prose mt-1">
-                            Sistem, üzerinde barındırdığı derin öğrenme (ML) algoritmaları sayesinde uçuş sırasında hedefleri sınıflandırabilir, tehdit analizi yapabilir ve yer kontrol istasyonuna kritik görüntü/veri aktarımını kesintisiz olarak sağlayabilir.
+                            Sistem, üzerinde barındırdığı derin öğrenme (ML) algoritmaları sayesinde uçuş sırasında
+                            hedefleri sınıflandırabilir, tehdit analizi yapabilir ve yer kontrol istasyonuna kritik
+                            görüntü/veri aktarımını kesintisiz olarak sağlayabilir.
                         </p>
                     </div>
 
@@ -257,16 +311,26 @@
                         <div class="comp-item">
                             <h4 class="pixel-font turan-text">AUVSI SUAS (ABD)</h4>
                             <p class="uav-prose">
-                                Dünyanın en prestijli üniversite seviyesi otonom sistemler yarışması olan AUVSI SUAS'ta sistemimiz; otonom engelden kaçınma, hedeflerin havadan karakterizasyonu, rota planlama ve faydalı yüklerin yüksek irtifadan hassas bir şekilde konuşlandırılması testlerini geçmek üzere tasarlanmıştır.
+                                Dünyanın en prestijli üniversite seviyesi otonom sistemler yarışması olan AUVSI SUAS'ta
+                                sistemimiz; otonom engelden kaçınma, hedeflerin havadan karakterizasyonu, rota planlama
+                                ve faydalı yüklerin yüksek irtifadan hassas bir şekilde konuşlandırılması testlerini
+                                geçmek üzere tasarlanmıştır.
                             </p>
                         </div>
                         <div class="comp-item mt-1">
                             <h4 class="pixel-font turan-text">KÜRESEL MÜHENDİSLİK VİZYONU</h4>
                             <p class="uav-prose">
-                                Turan İHA, sadece bir yarışma platformu olmaktan öte; savunma sanayi ekosistemine entegre olabilecek alt sistem (Aviyonik, Görüntü İşleme, Otopilot) teknolojilerinin AR-GE test yatağı olarak işlev görmektedir.
+                                Turan İHA, sadece bir yarışma platformu olmaktan öte; savunma sanayi ekosistemine
+                                entegre olabilecek alt sistem (Aviyonik, Görüntü İşleme, Otopilot) teknolojilerinin
+                                AR-GE test yatağı olarak işlev görmektedir.
                             </p>
                         </div>
                     </div>
+                </div>
+
+                <div class="uav-image-wrapper">
+                    <div class="hud-ring"></div>
+                    <img src="assets/images/turan_uav.png" alt="Turan İHA" class="uav-image">
                 </div>
             </div>
         </div>
@@ -278,13 +342,14 @@
             <h2 class="section-title center-text">MÜHENDİSLİK YOL HARİTASI</h2>
             <div class="timeline-container">
                 <div class="timeline-line"></div>
-                
+
                 <div class="timeline-item">
                     <div class="timeline-dot"></div>
                     <div class="timeline-content">
                         <span class="timeline-date pixel-font">FAZ 01</span>
                         <h3 class="timeline-title">Konsept & CFD Analizi</h3>
-                        <p class="timeline-text">Görev ihtiyaçlarına yönelik aerodinamik ön tasarım, Ansys akış simülasyonları ve sanal ortamda yapısal dayanım iterasyonları gerçekleştirilir.</p>
+                        <p class="timeline-text">Görev ihtiyaçlarına yönelik aerodinamik ön tasarım, Ansys akış
+                            simülasyonları ve sanal ortamda yapısal dayanım iterasyonları gerçekleştirilir.</p>
                     </div>
                 </div>
 
@@ -293,7 +358,8 @@
                     <div class="timeline-content">
                         <span class="timeline-date pixel-font">FAZ 02</span>
                         <h3 class="timeline-title">Kompozit Gövde İmalatı</h3>
-                        <p class="timeline-text">Karbon fiber ve fiberglas hibrit yapılar kullanılarak havacılık standartlarında, ağırlık/mukavemet oranı optimize edilmiş gövde üretimi tamamlanır.</p>
+                        <p class="timeline-text">Karbon fiber ve fiberglas hibrit yapılar kullanılarak havacılık
+                            standartlarında, ağırlık/mukavemet oranı optimize edilmiş gövde üretimi tamamlanır.</p>
                     </div>
                 </div>
 
@@ -302,7 +368,9 @@
                     <div class="timeline-content">
                         <span class="timeline-date pixel-font">FAZ 03</span>
                         <h3 class="timeline-title">Aviyonik & Yazılım Entegrasyonu</h3>
-                        <p class="timeline-text">Yedekli uçuş kontrol üniteleri, özel tasarım görev bilgisayarları ve yapay zeka modüllerinin (hedef tanıma) araca donanımsal/yazılımsal entegrasyonu sağlanır.</p>
+                        <p class="timeline-text">Yedekli uçuş kontrol üniteleri, özel tasarım görev bilgisayarları ve
+                            yapay zeka modüllerinin (hedef tanıma) araca donanımsal/yazılımsal entegrasyonu sağlanır.
+                        </p>
                     </div>
                 </div>
 
@@ -311,7 +379,9 @@
                     <div class="timeline-content">
                         <span class="timeline-date pixel-font">FAZ 04</span>
                         <h3 class="timeline-title">Saha ve Uçuş Testleri</h3>
-                        <p class="timeline-text">Geniş kapsamlı yer testleri (HIL/SIL), otonom seyir algoritmalarının doğrulanması ve uluslararası görev sahası (IMechE/Teknofest) koşullarında tam operasyonel uçuş icrası.</p>
+                        <p class="timeline-text">Geniş kapsamlı yer testleri (HIL/SIL), otonom seyir algoritmalarının
+                            doğrulanması ve uluslararası görev sahası (IMechE/Teknofest) koşullarında tam operasyonel
+                            uçuş icrası.</p>
                     </div>
                 </div>
             </div>
@@ -322,21 +392,25 @@
     <section id="team" class="team-section">
         <div class="container">
             <h2 class="section-title center-text">MÜHENDİSLİK TAKIMI</h2>
-            
+
             <!-- TAKIM KAPTANI -->
             <div class="team-department">
-                <h3 class="department-title pixel-font center-text" style="color: var(--text-primary); text-shadow: 0 0 5px rgba(255,255,255,0.5);">// TAKIM KAPTANI</h3>
+                <h3 class="department-title pixel-font center-text"
+                    style="color: var(--text-primary); text-shadow: 0 0 5px rgba(255,255,255,0.5);">// TAKIM KAPTANI
+                </h3>
                 <div class="team-flex">
                     <div class="team-card captain-highlight">
                         <div class="team-img-wrapper">
-                            <img src="assets/images/team/ali_kagan_yildirim/ali.jpeg" alt="Ali Kağan Yıldırım" class="team-img">
-                            <div class="team-hud-overlay"></div>
+                            <img src="assets/images/team/ali_kagan_yildirim/ali.jpeg" alt="Ali Kağan Yıldırım"
+                                class="team-img">
+                            <div class="scanline-overlay"></div>
                         </div>
                         <div class="team-info">
+                            <div class="id-barcode">|| ||| | |||</div>
                             <h4 class="team-name">Ali Kağan Yıldırım</h4>
                             <p class="team-role pixel-font" style="color: var(--asena-red);">Genel Takım Kaptanı</p>
-                            <p class="team-desc">Takım stratejisi, proje yönetimi ve otonom sistemler lideri. Görüntü işleme teknolojileri uzmanı.</p>
-
+                            <p class="team-desc">Takım stratejisi, proje yönetimi ve otonom sistemler lideri. Görüntü
+                                işleme teknolojileri uzmanı.</p>
                         </div>
                     </div>
                 </div>
@@ -349,60 +423,71 @@
                     <div class="team-card dept-captain-highlight">
                         <div class="team-img-wrapper">
                             <img src="assets/images/team/tolga_fidan/tolga.jpeg" alt="Tolga Fidan" class="team-img">
+                            <div class="scanline-overlay"></div>
                         </div>
                         <div class="team-info">
+                            <div class="id-barcode">| || ||| | |</div>
                             <h4 class="team-name">Tolga Fidan</h4>
                             <p class="team-role pixel-font" style="color: var(--turan-blue);">Yazılım Kaptanı</p>
-                            <p class="team-desc">Web tabanlı API yönetim paneli, yer kontrol istasyonu arayüzü ve telemetri altyapısı geliştiricisi.</p>
-
+                            <p class="team-desc">Web tabanlı API yönetim paneli, yer kontrol istasyonu arayüzü ve
+                                telemetri altyapısı geliştiricisi.</p>
                         </div>
                     </div>
 
                     <div class="team-card">
                         <div class="team-img-wrapper">
-                            <img src="assets/images/team/berkay_kocak/berkay2.jpeg" alt="Berkay Koçak" class="team-img">
+                            <img src="assets/images/team/berkay_kocak/berkay3.jpeg" alt="Berkay Koçak" class="team-img">
+                            <div class="scanline-overlay"></div>
                         </div>
                         <div class="team-info">
+                            <div class="id-barcode">||| | || |||</div>
                             <h4 class="team-name">Berkay Koçak</h4>
                             <p class="team-role pixel-font">Yazılım Ekibi</p>
-                            <p class="team-desc">Telemetri arayüzü geliştirme, otonom uçuş sistemleri ve C# masaüstü uygulamaları geliştiricisi.</p>
-
+                            <p class="team-desc">Telemetri arayüzü geliştirme, otonom uçuş sistemleri ve C# masaüstü
+                                uygulamaları geliştiricisi.</p>
                         </div>
                     </div>
 
                     <div class="team-card">
                         <div class="team-img-wrapper">
-                            <img src="assets/images/team/sinan_samil_koylu/sinan.jpeg" alt="Sinan Şamil Köylü" class="team-img">
+                            <img src="assets/images/team/sinan_samil_koylu/sinan.jpeg" alt="Sinan Şamil Köylü"
+                                class="team-img">
+                            <div class="scanline-overlay"></div>
                         </div>
                         <div class="team-info">
+                            <div class="id-barcode">| ||| || | |</div>
                             <h4 class="team-name">Sinan Şamil Köylü</h4>
                             <p class="team-role pixel-font">Yazılım Ekibi</p>
-                            <p class="team-desc">Otonom uçuş algoritmaları geliştirme ve ileri seviye yol planlama (pathfinding) uzmanı.</p>
-
+                            <p class="team-desc">Otonom uçuş algoritmaları geliştirme ve ileri seviye yol planlama
+                                (pathfinding) uzmanı.</p>
                         </div>
                     </div>
 
                     <div class="team-card">
                         <div class="team-img-wrapper">
                             <img src="assets/images/team/hakan_ulucar/hakan2.jpeg" alt="Hakan Uluçar" class="team-img">
+                            <div class="scanline-overlay"></div>
                         </div>
                         <div class="team-info">
+                            <div class="id-barcode">|| || | ||||</div>
                             <h4 class="team-name">Hakan Uluçar</h4>
                             <p class="team-role pixel-font">Yazılım Ekibi</p>
-                            <p class="team-desc">Genel yazılım geliştirme, sistem optimizasyonu ve takımın yazılım altyapısı geliştiricisi.</p>
-
+                            <p class="team-desc">Genel yazılım geliştirme, sistem optimizasyonu ve takımın yazılım
+                                altyapısı geliştiricisi.</p>
                         </div>
                     </div>
 
                     <div class="team-card">
                         <div class="team-img-wrapper">
                             <img src="assets/images/team/elif_yagiz/elif.jpeg" alt="Elif Yağız" class="team-img">
+                            <div class="scanline-overlay"></div>
                         </div>
                         <div class="team-info">
+                            <div class="id-barcode">| | ||| || |</div>
                             <h4 class="team-name">Elif Yağız</h4>
                             <p class="team-role pixel-font">Yazılım Ekibi</p>
-                            <p class="team-desc">İHA sensör entegrasyonu, sinyal işleme ve aviyonik alt sistemlerin tasarımı konularında uzman.</p>
-
+                            <p class="team-desc">İHA sensör entegrasyonu, sinyal işleme ve aviyonik alt sistemlerin
+                                tasarımı konularında uzman.</p>
                         </div>
                     </div>
                 </div>
@@ -415,24 +500,29 @@
                     <div class="team-card dept-captain-highlight">
                         <div class="team-img-wrapper">
                             <img src="assets/images/team/irem_kabay/irem.jpeg" alt="İrem Kabay" class="team-img">
+                            <div class="scanline-overlay"></div>
                         </div>
                         <div class="team-info">
+                            <div class="id-barcode">||| || | | |</div>
                             <h4 class="team-name">İrem Kabay</h4>
-                            <p class="team-role pixel-font" style="color: var(--turan-blue);">Elektrik Elektronik Kaptanı</p>
-                            <p class="team-desc">Güç dağıtım sistemleri, PCB tasarımı ve gelişmiş aviyonik entegrasyon süreçleri yöneticisi.</p>
-
+                            <p class="team-role pixel-font" style="color: var(--turan-blue);">Elektrik Elektronik
+                                Kaptanı</p>
+                            <p class="team-desc">Güç dağıtım sistemleri, PCB tasarımı ve gelişmiş aviyonik entegrasyon
+                                süreçleri yöneticisi.</p>
                         </div>
                     </div>
 
                     <div class="team-card">
                         <div class="team-img-wrapper">
                             <img src="assets/images/team_placeholder.png" alt="Samet Altun" class="team-img">
+                            <div class="scanline-overlay"></div>
                         </div>
                         <div class="team-info">
+                            <div class="id-barcode">| || ||| |||</div>
                             <h4 class="team-name">Samet Altun</h4>
                             <p class="team-role pixel-font">Elektrik/Elektronik</p>
-                            <p class="team-desc">Elektrik güç sistemleri, batarya yönetimi (BMS) ve kablolama mimarisi (harness) geliştiricisi.</p>
-
+                            <p class="team-desc">Elektrik güç sistemleri, batarya yönetimi (BMS) ve kablolama mimarisi
+                                (harness) geliştiricisi.</p>
                         </div>
                     </div>
                 </div>
@@ -444,13 +534,15 @@
                 <div class="team-flex">
                     <div class="team-card dept-captain-highlight">
                         <div class="team-img-wrapper">
-                            <img src="assets/images/team_placeholder.png" alt="Samet Alkan" class="team-img">
+                            <img src="assets/images/team/samet_alkan/samet.jpeg" alt="Samet Alkan" class="team-img">
+                            <div class="scanline-overlay"></div>
                         </div>
                         <div class="team-info">
+                            <div class="id-barcode">|| ||| | |||</div>
                             <h4 class="team-name">Samet Alkan</h4>
                             <p class="team-role pixel-font" style="color: var(--turan-blue);">Makine Kaptanı</p>
-                            <p class="team-desc">İHA kompozit gövde üretimi, yapısal mekanik montaj süreçleri ve aerodinamik tasarım uzmanı.</p>
-
+                            <p class="team-desc">İHA kompozit gövde üretimi, yapısal mekanik montaj süreçleri ve
+                                aerodinamik tasarım uzmanı.</p>
                         </div>
                     </div>
                 </div>
@@ -463,11 +555,14 @@
                     <div class="team-card">
                         <div class="team-img-wrapper">
                             <img src="assets/images/team/duygu_kilic/duygu2.jpeg" alt="Duygu Kılıç" class="team-img">
+                            <div class="scanline-overlay"></div>
                         </div>
                         <div class="team-info">
+                            <div class="id-barcode">| | ||| || |</div>
                             <h4 class="team-name">Duygu Kılıç</h4>
                             <p class="team-role pixel-font">Yönetim</p>
-                            <p class="team-desc">Kurumsal iletişim, sponsorluk yönetimi, proje dökümantasyonu ve genel takım koordinatörü.</p>
+                            <p class="team-desc">Kurumsal iletişim, sponsorluk yönetimi, proje dökümantasyonu ve genel
+                                takım koordinatörü.</p>
                         </div>
                     </div>
                 </div>
@@ -480,7 +575,7 @@
     <section id="gallery" class="gallery-section">
         <div class="container">
             <h2 class="section-title center-text">FOTOĞRAF GALERİSİ</h2>
-            
+
             <div class="gallery-grid">
                 <div class="gallery-item">
                     <img src="assets/images/gallery/img1.jpeg" alt="Galeri 1" class="gallery-img">
@@ -513,12 +608,13 @@
     <!-- Lightbox Modal -->
     <div id="galleryModal" class="lightbox-modal">
         <button class="modal-close btn-outline-white pixel-font" id="modalClose">X</button>
-        <button class="modal-nav prev btn-outline-white pixel-font" id="modalPrev"><</button>
-        <div class="modal-content-wrapper">
-            <img src="" alt="Büyütülmüş Görsel" id="modalImage" class="modal-img">
-            <div class="hud-corners"></div>
-        </div>
-        <button class="modal-nav next btn-outline-white pixel-font" id="modalNext">></button>
+        <button class="modal-nav prev btn-outline-white pixel-font" id="modalPrev">
+            << /button>
+                <div class="modal-content-wrapper">
+                    <img src="" alt="Büyütülmüş Görsel" id="modalImage" class="modal-img">
+                    <div class="hud-corners"></div>
+                </div>
+                <button class="modal-nav next btn-outline-white pixel-font" id="modalNext">></button>
     </div>
 
     <!-- Sponsorship Section -->
@@ -527,9 +623,11 @@
         <div class="container center-text" style="position: relative; z-index: 2;">
             <h2 class="section-title" style="color: #ffffff; text-shadow: 2px 2px 0 #000;">SPONSORUMUZ OLUN</h2>
             <p class="hero-desc" style="max-width: 800px; margin: 0 auto 2rem auto; color: #dddddd;">
-                Geleceğin insansız hava aracı teknolojilerini geliştiren ekibimize destek vererek, milli teknoloji hamlesinde yerinizi alın. 
+                Geleceğin insansız hava aracı teknolojilerini geliştiren ekibimize destek vererek, milli teknoloji
+                hamlesinde yerinizi alın.
             </p>
-            <a href="assets/docs/ASENA_2026_Sponsorluk_Dosyasi_Profesyonel.pdf" target="_blank" class="btn btn-outline-white pixel-font">[ SPONSORLUK DOSYASI (PDF) ]</a>
+            <a href="assets/docs/ASENA_2026_Sponsorluk_Dosyasi_Profesyonel.pdf" target="_blank"
+                class="btn btn-outline-white pixel-font">[ SPONSORLUK DOSYASI (PDF) ]</a>
         </div>
     </section>
 
@@ -537,12 +635,13 @@
     <section id="contact" class="contact-section">
         <div class="container">
             <h2 class="section-title center-text">İLETİŞİM BİLGİLERİ</h2>
-            
+
             <div class="contact-grid">
                 <div class="contact-info-panel">
                     <h3 class="contact-subtitle">Operasyon Merkezi</h3>
-                    <p class="contact-desc">Mühendislik çalışmalarımız, projelerimiz veya sponsorluk teklifleri için iletişim kanallarımızdan bize ulaşabilirsiniz.</p>
-                    
+                    <p class="contact-desc">Mühendislik çalışmalarımız, projelerimiz veya sponsorluk teklifleri için
+                        iletişim kanallarımızdan bize ulaşabilirsiniz.</p>
+
                     <div class="contact-item">
                         <div class="contact-icon pixel-font">@</div>
                         <div class="contact-detail">
@@ -581,9 +680,11 @@
                         </div>
                         <div class="form-group">
                             <label class="pixel-font" style="font-size: 0.6rem;">// MESAJ İÇERİĞİ</label>
-                            <textarea class="sharp-input" rows="4" placeholder="İletilecek veriyi giriniz..."></textarea>
+                            <textarea class="sharp-input" rows="4"
+                                placeholder="İletilecek veriyi giriniz..."></textarea>
                         </div>
-                        <button type="submit" class="btn btn-outline-white" style="margin-top: 1rem; width: 100%;">VERİYİ İLET</button>
+                        <button type="submit" class="btn btn-outline-white"
+                            style="margin-top: 1rem; width: 100%;">VERİYİ İLET</button>
                     </form>
                 </div>
             </div>
@@ -598,9 +699,10 @@
                     <div class="footer-logo">
                         <img src="assets/images/logo.jpeg" alt="Asena İHA Logo" class="nav-logo-img">
                     </div>
-                    <p class="footer-desc mt-1">Aksaray Üniversitesi bünyesinde kurulan ve tamamen bağımsız, yüksek teknoloji odaklı mühendislik çözümleri üreten insansız hava aracı takımı.</p>
+                    <p class="footer-desc mt-1">Aksaray Üniversitesi bünyesinde kurulan ve tamamen bağımsız, yüksek
+                        teknoloji odaklı mühendislik çözümleri üreten insansız hava aracı takımı.</p>
                 </div>
-                
+
                 <div class="footer-col">
                     <h4 class="footer-title pixel-font">HIZLI ERİŞİM</h4>
                     <ul class="footer-links">
@@ -621,13 +723,15 @@
                     </ul>
                 </div>
             </div>
-            
+
             <div class="footer-bottom">
-                <p class="pixel-font" style="font-size: 0.6rem; color: var(--text-secondary);">SYS_V2.0 // © 2026 TOLGA FİDAN. TÜM HAKLARI SAKLIDIR.</p>
+                <p class="pixel-font" style="font-size: 0.6rem; color: var(--text-secondary);">SYS_V2.0 // © 2026 TOLGA
+                    FİDAN. TÜM HAKLARI SAKLIDIR.</p>
             </div>
         </div>
     </footer>
 
     <script src="js/app.js"></script>
 </body>
+
 </html>

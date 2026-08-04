@@ -47,14 +47,14 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Tab Logic for UAV Sections
-    const tabBtns = document.querySelectorAll('.tab-btn');
+    const tabBtns = document.querySelectorAll('.cyber-tab-btn');
     tabBtns.forEach(btn => {
         btn.addEventListener('click', () => {
             const parent = btn.closest('.uav-details');
             const targetId = btn.getAttribute('data-target');
             
             // Remove active classes
-            parent.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+            parent.querySelectorAll('.cyber-tab-btn').forEach(b => b.classList.remove('active'));
             parent.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
             
             // Add active class
